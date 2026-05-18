@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Health Information System | Local Wellness</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* PART 2 & 4: CSS GRID MAIN LAYOUT & GLOBAL STYLING
+           - Using grid-template-areas for the overall structure
+           - Health/Medical theme: Blues, Greens, and Whites
+        */
+        :root {
+            --primary-blue: #2c3e50;
+            --medical-blue: #3498db;
+            --health-green: #27ae60;
+            --light-bg: #f4f7f6;
+            --white: #ffffff;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light-bg);
+            line-height: 1.6;
+            color: #333;
+            display: grid;
+            min-height: 100-vh;
+            /* Requirement: CSS Grid Template Areas */
+            grid-template-areas:
+                "header"
+                "nav"
+                "main"
+                "sidebar"
+                "footer";
+        }
+
+        /* PART 1: SEMANTIC HTML STRUCTURE 
+           Styling the structural elements
+        */
+        header {
+            grid-area: header;
+            background: linear-gradient(135deg, var(--primary-blue), var(--medical-blue));
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            /* PART 5: Animation trigger */
+            animation: fadeInDown 1s ease-out;
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* PART 3: FLEXBOX NAVIGATION */
+        nav {
+            grid-area: nav;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 500;
+            transition: var(--transition);
+            /* PART 5: Smooth Transition */
+        }
+
+        nav ul li a:hover {
+            background-color: var(--medical-blue);
+            color: var(--white);
+        }
+
+        /* PART 4: GRID LAYOUT (Desktop View) */
+        main {
+            grid-area: main;
+            padding: 2rem;
+        }
+
+        aside {
+            grid-area: sidebar;
+            padding: 2rem;
+            background-color: #eef2f3;
+        }
+
+        /* PART 3: FLEXBOX ARTICLES */
+        .article-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        article {
+            flex: 1 1 calc(50% - 20px);
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--health-green);
+            /* Advanced Selector usage */
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        article:hover {
+            transform: translateY(-5px);
+            /* PART 5: Advanced Hover */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        article h2 {
+            margin-bottom: 1rem;
+            color: var(--medical-blue);
+        }
+
+        /* Sidebar Styling */
+        .sidebar-widget {
+            background: var(--white);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-widget h3 {
+            border-bottom: 2px solid var(--health-green);
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.3rem;
+        }
+
+        .sidebar-widget ul {
+            list-style: none;
+        }
+
+        .sidebar-widget ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* PART 5: CSS ANIMATION */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* PART 1: FOOTER */
+        footer {
+            grid-area: footer;
+            background: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* PART 5: RESPONSIVE DESIGN (Media Queries) */
+        @media screen and (min-width: 768px) {
+            body {
+                grid-template-columns: 3fr 1fr;
+                grid-template-areas:
+                    "header header"
+                    "nav nav"
+                    "main sidebar"
+                    "footer footer";
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            article {
+                flex: 1 1 100%;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* PART 5: Advanced Selector (:nth-child) */
+        .sidebar-widget ul li:nth-child(odd) {
+            color: var(--medical-blue);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Community Health Information System</h1>
+        <p>Your Portal for Local Wellness and Disease Prevention</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2 style="margin-bottom: 1rem; border-bottom: 2px solid #ddd;">Current Health Insights</h2>
+            <div class="article-container">
+                <article>
+                    <h2>Vaccination Awareness</h2>
+                    <p>Staying up-to-date with immunizations is the most effective way to protect yourself and the
+                        community. Our clinics offer seasonal flu shots and essential childhood vaccines every Tuesday.
+                    </p>
+                </article>
+
+                <article>
+                    <h2>Nutrition for Families</h2>
+                    <p>Good health starts in the kitchen. Incorporating local vegetables and reducing processed sugars
+                        can significantly decrease the risk of lifestyle diseases like diabetes.</p>
+                </article>
+
+                <article>
+                    <h2>Mental Health Matters</h2>
+                    <p>Community well-being includes emotional health. We are now offering free counseling sessions for
+                        those dealing with stress or anxiety every Friday afternoon.</p>
+                </article>
+
+                <article>
+                    <h2>Physical Activity</h2>
+                    <p>Walking just 30 minutes a day can improve cardiovascular health. Join our local "Walking
+                        Warriors" group meeting at the community center every morning.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <aside>
+        <div class="sidebar-widget">
+            <h3>Quick Links</h3>
+            <ul>
+                <li>Book Appointment</li>
+                <li>Find a Clinic</li>
+                <li>Health Records</li>
+                <li>Emergency Contacts</li>
+            </ul>
+        </div>
+        <div class="sidebar-widget">
+            <h3>Announcements</h3>
+            <p><strong>COVID-19 Booster:</strong> Now available at the Central District Pharmacy.</p>
+            <p style="margin-top: 10px;"><strong>Blood Drive:</strong> Join us this Saturday at 9:00 AM.</p>
+        </div>
+    </aside>
+
+    <footer>
+        <p>&copy; 2026 Community Health Information System. All Rights Reserved. | Dedicated to Public Wellness.</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ally Jabiri Jaha | Web Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #00d4ff;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+    .nav-links a {
+      color: #e0e0e0;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    .hero-content {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+    .hero-text h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero-text .title {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+    .hero-text p {
+      font-size: 1.2rem;
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: var(--primary);
+      color: black;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+    }
+    .profile-img {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      border: 5px solid var(--primary);
+      object-fit: cover;
+    }
+
+    /* Sections */
+    section {
+      padding: 100px 0;
+    }
+    h2 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--primary);
+    }
+
+    /* About */
+    .about p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+    }
+    .skill-card {
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .skill-card:hover {
+      transform: translateY(-10px);
+      background: #222;
+    }
+    .skill-card i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: #1a1a1a;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: 0.4s;
+    }
+    .project-card:hover {
+      transform: scale(1.05);
+    }
+    .project-card h3 {
+      padding: 1.2rem;
+      color: var(--primary);
+    }
+    .project-card p {
+      padding: 0 1.2rem 1.2rem;
+    }
+
+    /* Education */
+    .education {
+      background: #111;
+      border-radius: 20px;
+      padding: 2.5rem;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+    }
+    .contact a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      background: #111;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="container nav-content">
+      <div class="logo">AJJ</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Hi, I'm <span style="color: #00d4ff;">Ally Jabiri Jaha</span></h1>
+        <p class="title">Web Developer</p>
+        <p>Innovative and passionate web developer with excellent communication skills. I love turning ideas into functional and beautiful digital experiences.</p>
+        <a href="#projects" class="btn">View My Projects</a>
+      </div>
+      <img src="jaha.png" alt="Ally Jabiri Jaha" class="profile-img">
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about">
+        <p>
+          I am a dedicated Web Developer with strong problem-solving abilities and excellent communication skills. 
+          I enjoy creating modern, responsive, and user-friendly websites. Always eager to learn new technologies 
+          and deliver innovative digital solutions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" style="background: #111;">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card"><i class="fab fa-html5"></i><h3>HTML5</h3></div>
+        <div class="skill-card"><i class="fab fa-css3-alt"></i><h3>CSS3</h3></div>
+        <div class="skill-card"><i class="fab fa-js"></i><h3>JavaScript</h3></div>
+        <div class="skill-card"><i class="fab fa-java"></i><h3>Java</h3></div>
+        <div class="skill-card"><i class="fas fa-code"></i><h3>C++</h3></div>
+        <div class="skill-card"><i class="fas fa-network-wired"></i><h3>Cisco Packet Tracer</h3></div>
+        <div class="skill-card"><i class="fas fa-chart-bar"></i><h3>NumPy</h3></div>
+        <div class="skill-card"><i class="fas fa-table"></i><h3>Pandas</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Stock Market Web App</h3>
+          <p>Real-time stock tracking web application with interactive charts and data visualization built using HTML, CSS, JavaScript and external APIs.</p>
+        </div>
+        <div class="project-card">
+          <h3>Machine Learning Prediction Model</h3>
+          <p>Developed a machine learning model using Python (NumPy & Pandas) for data analysis and prediction with clean web interface.</p>
+        </div>
+        <div class="project-card">
+          <h3>Personal Portfolio Website</h3>
+          <p>Modern responsive portfolio website with smooth animations and dark theme design.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="education">
+        <h3>Bachelor's Degree</h3>
+        <p style="font-size: 1.3rem; margin: 1rem 0;">University of Dodoma</p>
+        <p>Currently pursuing my degree with focus on Software Development and Data-related technologies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="background: #111;">
+    <div class="container contact">
+      <h2>Get In Touch</h2>
+      <p style="font-size: 1.3rem; margin: 2rem 0;">
+        📧 <a href="mailto:allyjaha8@gmail.com">allyjaha8@gmail.com</a>
+      </p>
+      <p>
+        <a href="https://github.com/jaha-cyber" target="_blank" style="margin: 0 15px; font-size: 1.5rem;">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Ally Jabiri Jaha. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        if (this.getAttribute('href') !== '#') {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
